@@ -18,15 +18,15 @@ class CreateProductsTable extends Migration
             $table->decimal('price',8,2);
             $table->decimal('sale_price',8 ,2);
             $table->text('description');
-            $table->string('img');
             $table->integer('stock');
-            $table->integer('brand_id')->unsigned()->index;
-            $table->integer('category_id')->unsigned()->index;
+            $table->foreignId('brand_id');
+            $table->foreignId('category_id');
             $table->string('color');
             $table->string('name');
+            $table->foreignId('img_id');
+            $table->string('size');
             
-            $table->foreign('brand_id')->references('id')->on('brands')->onDelete('cascade');
-            $table->foreign('category_id')->references('id')->on('categories')->onDelete('cascade');
+            
             $table->timestamps();
         });
     }

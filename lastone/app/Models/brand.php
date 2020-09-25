@@ -9,6 +9,9 @@ class brand extends Model
 {
     use HasFactory;
 
+    protected $table = 'brands';
+
+
     protected $fillable = ['name']; 
 
     public function getProduct(){

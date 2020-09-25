@@ -9,16 +9,27 @@ class product extends Model
 {
     use HasFactory;
 
+
+    protected $table = 'products';
+
     protected $fillable = [
-        'name', 'description','color'
+        'name', 'description','color','size'
     ];
 
 
     protected $guarded = [
-        'price','stock','img','sale_price','price'
+        'stock','img_id','sale_price','price','category_id','brand_id'
     ];
 
-    public function getCategoryRelation(){
+    public function category(){
         return $this->belongsTo(category::class);
     }
+
+    public function brand(){
+        return $this->belongsTo(brand::class);
+    }
+    public function img(){
+        return $this->hasMany(productImg::class);
+    }
+
 }
