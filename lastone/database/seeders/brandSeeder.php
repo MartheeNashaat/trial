@@ -3,11 +3,9 @@
 namespace Database\Seeders;
 
 use Illuminate\Database\Seeder;
-use Illuminate\Support\Facades\DB;
-use Illuminate\Support\Str;
-use Illuminate\Database\Eloquent\Model;
+use App\Models\brand;
 
-class brandSeeder extends Seeder
+class brandseeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -16,11 +14,17 @@ class brandSeeder extends Seeder
      */
     public function run()
     {
-        
-        /*  DB::table('brands')->insert([
-            ['name'=>'Armani Exchange' ],
-            ['name'=>'Tommy Hilfiger'] ,
-            ['name'=>'Calvin Klein']
-         ]);  */
+        //
+        brand::create([
+            'name'=>'Armani Exchange'
+        ]);
+
+        brand::create([
+            'name'=>'Tommy Hilfiger'
+        ]);
+
+        brand::create([
+            'name'=>'Calvin Klein'
+        ]);
     }
 }

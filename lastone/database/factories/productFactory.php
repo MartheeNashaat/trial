@@ -6,7 +6,6 @@ use App\Models\product;
 use Illuminate\Database\Eloquent\Factories\Factory;
 use Illuminate\Support\Str;
 use App\Models\category;
-use App\Models\productImg;
 use App\Models\brand;
 
 
@@ -34,12 +33,11 @@ class productFactory extends Factory
             'description' => $this->faker->paragraph,
             'color' => $this->faker->safeColorName,
             'stock' =>  $this->faker->numberBetween($min = 1, $max = 20),
-            'sale_price' => $this->faker-> randomFloat($nbMaxDecimals = 3, $min = 0, $max = 1000) ,
-            'price' => $this->faker->randomFloat($nbMaxDecimals = 3, $min = 0, $max = 1000)  ,
+            'price'  => $this->faker-> randomFloat($nbMaxDecimals = 3, $min = 1000, $max = 2000) ,
+            'sale_price' => $this->faker->randomFloat($nbMaxDecimals = 3, $min = 500, $max = 700)  ,
             'size'=> $this->faker->word,
-            'category_id'=>category::factory()  ,
-            'img_id' =>productImg::factory() ,
-            'brand_id'=>brand::factory()
+            'category_id'=>$this->faker->numberBetween($min = 1, $max = 4),
+            'brand_id'=>$this->faker->numberBetween($min = 1, $max = 3)
         ];
     }
 }

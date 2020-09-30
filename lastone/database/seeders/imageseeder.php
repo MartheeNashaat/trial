@@ -3,9 +3,7 @@
 namespace Database\Seeders;
 
 use Illuminate\Database\Seeder;
-use Illuminate\Support\Facades\DB;
-use Illuminate\Support\Str;
-use Illuminate\Database\Eloquent\Model; 
+use App\Models\image;
 
 class imageseeder extends Seeder
 {
@@ -16,10 +14,65 @@ class imageseeder extends Seeder
      */
     public function run()
     {
-        /* DB::table('product_imgs')->insert([
-            ['slug'=>'ckshirt1.jpg' ],
-            ['slug'=>'ckshirt2.jpg'] ,
-            ['slug'=>'ckshirt3.jpg']
-         ]);  */
+        image::create([
+            'image'=>'tommyshirt1.jpg',
+            'product_id'=>1
+        ]);
+
+        image::create([
+            'image'=>'tommyshirt2.jpg',
+            'product_id'=>1
+        ]);
+
+        image::create([
+            'image'=>'tommyshirt3.jpg',
+            'product_id'=>1
+        ]);
+
+        image::create([
+            'image'=>'tommyjacket1.jpg',
+            'product_id'=>2
+        ]);
+
+        image::create([
+            'image'=>'tommyjacket2.jpg',
+            'product_id'=>2
+        ]);
+
+        image::create([
+            'image'=>'tommyjacket3.jpg',
+            'product_id'=>2
+        ]);
+
+        image::create([
+            'image'=>'armanitshirt1.jpg',
+            'product_id'=>3
+        ]);
+
+        image::create([
+            'image'=>'armanitshirt2.jpg',
+            'product_id'=>3
+        ]);
+
+        image::create([
+            'image'=>'armanitshirt3.jpg',
+            'product_id'=>3
+        ]);
+
+        image::create([
+            'image'=>'armanigirl3.jpg',
+            'product_id'=>4
+        ]);
+
+        image::create([
+            'image'=>'armanigirl2.jpg',
+            'product_id'=>4
+        ]);
+
+        image::create([
+            'image'=>'armanigirl1.jpg',
+            'product_id'=>4
+        ]);
+
     }
 }

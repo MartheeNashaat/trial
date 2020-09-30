@@ -3,11 +3,9 @@
 namespace Database\Seeders;
 
 use Illuminate\Database\Seeder;
-use Illuminate\Support\Facades\DB;
-use Illuminate\Support\Str;
-use Illuminate\Database\Eloquent\Model;
+use App\Models\category;
 
-class categorySeeder extends Seeder
+class categoryseeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -16,12 +14,21 @@ class categorySeeder extends Seeder
      */
     public function run()
     {
-/* 
-        DB::table('categories')->insert([
-            ['type'=>'shirts' ],
-            ['type'=>'shoes'] ,
-            ['type'=>'bags']
-        ]);  */
+        category::create([
+            'type'=>'clothing'
+        ]);
+
+        category::create([
+            'type'=>'shoes'
+        ]);
+
+        category::create([
+            'type'=>'bags'
+        ]);
+
+        category::create([
+            'type'=>'accessories'
+        ]);
         //
     }
 }

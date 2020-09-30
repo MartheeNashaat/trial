@@ -18,7 +18,7 @@ class product extends Model
 
 
     protected $guarded = [
-        'stock','img_id','sale_price','price','category_id','brand_id'
+        'stock','sale_price','price','category_id','brand_id'
     ];
 
     public function category(){
@@ -28,8 +28,12 @@ class product extends Model
     public function brand(){
         return $this->belongsTo(brand::class);
     }
-    public function img(){
-        return $this->hasMany(productImg::class);
+    public function images(){
+        return $this->hasMany(image::class);
+    }
+
+    public function wishlist(){
+        return $this->belongsTo(wishlist::class);
     }
 
 }
