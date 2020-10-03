@@ -24,7 +24,7 @@ class imageFactory extends Factory
     public function definition()
     {
         return [
-            'image' => $this->faker->image(storage_path('images'),400,300, 'fashion', false),
+            'image' => $this->faker->image(public_path('images'),400,300, 'fashion', false),
             'product_id'=>product::factory()
         ];
     }
